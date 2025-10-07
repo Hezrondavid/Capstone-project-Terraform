@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 resource "aws_security_group" "devops_sg" {
@@ -50,9 +50,9 @@ resource "aws_security_group" "devops_sg" {
 }
 
 resource "aws_instance" "devops_ec2" {
-  ami           = "ami-0c101f26f147fa7fd" # Amazon Linux 2023 (us-east-1)
-  instance_type = "t2.medium"
-  key_name      = "hezron25jul2025"
+  ami           = "ami-0c101f26f147fa7fd"
+  instance_type = var.instance_type
+  key_name      = var.key_name
   security_groups = [aws_security_group.devops_sg.name]
 
   tags = {
