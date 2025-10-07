@@ -1,0 +1,11 @@
+variable "region" {
+  default = "us-east-1"
+}
+
+variable "instance_type" {
+  default = "t2.medium"
+}
+
+variable "key_name" {
+  default = "hezron25jul2025"
+}
